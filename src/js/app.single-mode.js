@@ -81,15 +81,15 @@ const machineGame = () => {
 
   if (secondPlayerCurrentScore >= 25 && secondPlayerTotalScore < 50 && firstPlayerTotalScore < 85) {
     clearInterval(machineMove);
-    setTimeout(function(){
+    setTimeout(function () {
       machineFixed();
     }, 1200);
   }
 
   if (secondPlayerCurrentScore >= 15 && secondPlayerTotalScore >= 50 && firstPlayerTotalScore < 85
-     && (secondPlayerCurrentScore + secondPlayerTotalScore < 90)) {
+    && (secondPlayerCurrentScore + secondPlayerTotalScore < 90)) {
     clearInterval(machineMove);
-    setTimeout(function(){
+    setTimeout(function () {
       machineFixed();
     }, 1200);
   }
@@ -100,7 +100,7 @@ btnNextMove.addEventListener('click', () => {
   img.src = `./src/img/dice/dice-${dice}.svg`;
   if (dice == 1) numberOne();
 
-  if(firstPlayerMove) {
+  if (firstPlayerMove) {
     firstPlayerCurrentScore += dice;
     currentScore1.textContent = firstPlayerCurrentScore;
     if ((firstPlayerCurrentScore + firstPlayerTotalScore) > 99) {
@@ -124,7 +124,7 @@ const fixScore = () => {
   firstPlayerCurrentScore = 0;
   opacity();
 
-  if (firstPlayerTotalScore < 99) {
+  if (firstPlayerTotalScore < 100) {
     machineMove = setInterval(machineGame, 1000);
   }
 }
